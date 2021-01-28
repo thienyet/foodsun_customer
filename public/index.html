@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/logoMain.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Good Food</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+<script>
+  let __protocol = document.location.protocol;
+  let _baseUrl = __protocol + '//livechat.fpt.ai/v35/src';
+
+  let prefixNameLiveChat = 'FoodSun';
+  let objPreDefineLiveChat = {
+    appCode: '362dac14f95498bd560b419c4cf9f875',
+    themes: '',
+    appName: prefixNameLiveChat ? prefixNameLiveChat : 'Live support',
+    thumb: '',
+    icon_bot: ''
+  },
+    appCodeHash = window.location.hash.substr(1);
+  if (appCodeHash.length == 32) {
+    objPreDefineLiveChat.appCode = appCodeHash;
+  }
+
+  let fpt_ai_livechat_script = document.createElement('script');
+  fpt_ai_livechat_script.id = 'fpt_ai_livechat_script';
+  fpt_ai_livechat_script.src = _baseUrl + '/static/fptai-livechat.js';
+  document.body.appendChild(fpt_ai_livechat_script);
+
+  let fpt_ai_livechat_stylesheet = document.createElement('link');
+  fpt_ai_livechat_stylesheet.id = 'fpt_ai_livechat_script';
+  fpt_ai_livechat_stylesheet.rel = 'stylesheet';
+  fpt_ai_livechat_stylesheet.href = _baseUrl + '/static/fptai-livechat.css';
+  document.body.appendChild(fpt_ai_livechat_stylesheet);
+
+  fpt_ai_livechat_script.onload = function () {
+    fpt_ai_render_chatbox(objPreDefineLiveChat, _baseUrl, 'livechat.fpt.ai:443').catch(e => {
+      console.log(e);
+    });
+  }
+</script>
+
+</html>

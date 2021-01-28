@@ -1,0 +1,63 @@
+
+#wrapper{
+    background-color: #ffffff;
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;  
+}
+
+#dialog{
+    max-width: 1400px;
+    margin: auto;
+    background-color: #ffffff;
+}
+.title{
+    margin-bottom: 0;
+    color: #d4380d ;
+    font-size: 15;
+    font-weight: bold;
+}
+
+.title:hover{
+    cursor: pointer;
+}
+.divider{
+    border-left: 1px solid darkgray;
+    height: 100%;
+}
+
+.input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px 0px rgba(0,0,0,0.35)
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+@media screen and (max-width: 768px) {
+    #dialog{
+        max-width: 200px;
+        margin: auto;
+        background-color: #FF98;
+    }
+  }
+
+@media screen and (max-width: 992px) {
+    #dialog{
+        max-width: 200px;
+        margin: auto;
+        background-color: #FF98;
+    }
+}
